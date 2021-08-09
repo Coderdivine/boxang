@@ -1,17 +1,16 @@
 import React from 'react'
 import {Pie,defaults} from 'react-chartjs-2';
 //defaults.global.legend.position ='bottom';
-function Piechart(props) {
-    const data =props.data;
-    const person=props.person;
+function Piechart() {
+   
     return (
         <div>
            <Pie
-            data={{labels:data,
+            data={{labels:['red','yellow','black','purple'],
            datasets:[
                {
                    label:'£ of votes',
-                   data:person,
+                   data:[67,89,12,34],
                    backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',

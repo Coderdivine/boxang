@@ -3,17 +3,15 @@ import {Line,defaults} from 'react-chartjs-2';
 //defaults.global.legend.position ='bottom'
 
 function Barchat(props) {
-    const data=props.data;
-    const person=props.person;
-    const income=props.income;
+   
     return (
         <div>
          <Line
-            data={{labels:data,
+            data={{labels:['red','yellow','black','purple'],
            datasets:[
                {
                    label:'£ of votes',
-                   data:person,
+                   data:[67,78,69,34],
                    backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -32,7 +30,7 @@ function Barchat(props) {
 
                },{
                    label:'Quantity',
-                   data:income,
+                   data:[35,67,98,10],
                    backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
