@@ -1,4 +1,4 @@
-import React,{useState,useContext,useEffect} from 'react';
+import React,{useState,useContext,useEffect,createContext} from 'react';
 import Adspage from './Adspage';
 import Dashbaord from './Dashboard';
 import Filterboxbang from './Filterboxbang';
@@ -7,11 +7,10 @@ import Top from './Top';
 import Topthree  from './Topthree';
 import Admin  from './Admin';
 import Home from './Home';
-const cuser=[{ id:1, name:"chimdindu",account:"4567890",password:"12345",rfcode:"hEfhFVVFjVJjHVKhfBrhjJKfK"},
-{ id:2, name:"chimdindu",account:"4567890",password:"12345",rfcode:"hEfhFVVFjVJjHVKhfBrhjJKfK"},
-{ id:3, name:"chimdindu",account:"4567890",password:"12345",rfcode:"hEfhFVVFjVJjHVKhfBrhjJKfK"}
-
-];
+import axios from 'axios';
+import {Axios} from "./Contact";
+import { getDefaultNormalizer } from '@testing-library/react';
+ export const create=createContext();
 function Homepage() {
     const[name,setName]=useState("");
     const[pass,setPass]=useState("")
@@ -21,32 +20,73 @@ function Homepage() {
    const[account,setAccount]=useState("")
    const[password,setPassword]=useState("");
    const[rfcode,setRfcode]=useState("");
+   const[datacreated,setDatacreated]=useState([])
    const[one,setOne]=useState(<div>...</div>)
    const [fa,setFa]=useState(false);
+   const[counter,setCounter]=useState(0);
+   const[counterlive,setCounterlive]=useState(true);
+
+   useEffect(() => {
+       if(counterlive){
+  const timeinterval=setTimeout(() => {
+      setCounter(counter+1);
+  },1000);
+       
+       return () => {
+          clearInterval(timeinterval)
+       }}
+   }, [counter,counterlive])
    useEffect(() => {
        setInterval(() => {
           setChange(false); 
-       }, 4000);
+       }, 3000);
    }, [])
+   useEffect(() => {
+       const localcounter=localStorage.setItem('counter',counter);
+       if(localcounter){
+           setCounter(localcounter);
+       }
+       
+   }, [counter])
    const handleDashboard=(e)=>{
        setLoad(false);
-       setOne(<div class="black"><Dashbaord/></div>);
+       
+       setOne(<div class="black"><Dashbaord list={datacreated}/></div>);
    }
    const handleDash=(e)=>{
        if(name==="chimdindu" && pass==="chimdinduasdasd"){
     setLoad(false);
-    setOne(<div class="black"><Admin/></div>);}
+    setOne(<div class="black"><Admin list={datacreated}/></div>);}
 }
- const  handleJoin=(e)=>{
+ const  handleJoin=async(e)=>{
      e.preventDefault();
-       localStorage.setItem("username",username);
-    localStorage.setItem("account",account)   
-    const puser={id:4,name:username,account:account,password:password,rfcode:rfcode};
-    cuser.push(puser);
-    console.log(puser,"cuser");
-    sessionStorage.setItem("cuser",JSON.stringify(cuser))
+     localStorage.setItem('username',username)
+     localStorage.setItem('account',account)
+const res={
+    name:username,
+    accno:account,
+    password:password,
+    rfcode:rfcode
+}
+const resq=await Axios.post("/api/create",res).then((response)=>{
+    console.log("success")
+}).then(()=>{alert("success")});
+if(resq)getdata()
     
 }
+const getdata=async()=>{
+    
+    
+    const resq=await Axios.get("/employee").then((response)=>{
+        console.log("success")
+    })
+    if(resq && resq.data)
+    setDatacreated(resq.data)
+        
+}
+useEffect(() => {
+   getdata();
+}, [])
 const handlefa=(e)=>{
     setFa(true);
 }
@@ -59,6 +99,7 @@ const handlefa=(e)=>{
                 <div class="inner-container">
             <div class="row" >
             <div class="col-2" >
+               
             <h1>Welcome To <br/>Boxang !
 </h1><br/>
               <button class="btn" onClick={(e)=>handleDashboard(e)}><h2>View Dashboard</h2></button>

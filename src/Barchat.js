@@ -2,16 +2,18 @@ import React from 'react'
 import {Line,defaults} from 'react-chartjs-2';
 //defaults.global.legend.position ='bottom'
 
-function Barchat(props) {
-   
+function Barchat() {
+   const income=JSON.parse(localStorage.getItem('dataincome'))
+   const id=JSON.parse(localStorage.getItem('dataid'))
+   const data=JSON.parse(localStorage.getItem('data'))
     return (
         <div>
          <Line
-            data={{labels:['red','yellow','black','purple'],
+            data={{labels:id,
            datasets:[
                {
                    label:'£ of votes',
-                   data:[67,78,69,34],
+                   data:data,
                    backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -30,21 +32,10 @@ function Barchat(props) {
 
                },{
                    label:'Quantity',
-                   data:[35,67,98,10],
-                   backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
+                   data:income,
+                   backgroundColor: ['red'
                 ],borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
+                    'blue'
                 ], borderWidth:1,   
                }
            ]

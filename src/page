@@ -1,0 +1,24 @@
+app.post("/create",(req,res)=>{
+    const name=req.body.name;
+    const accno=req.body.accno;  
+    const password=req.body.password;
+    const rfcode=req.body.rfcode;
+    db.query('INSERT INTO employee (name,accno,password,rfcode)VALUES(?,?,?,?)',[name,accno,password,rfcode],(err,result)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.send("Value in  serted");
+        }
+    })
+
+})
+app.get("/employee",(req,res)=>{
+  
+    db.query('SELECT * FROM employees',(err,result)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.send(result);
+        }
+    })
+    })

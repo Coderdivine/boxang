@@ -3,14 +3,16 @@ import {Pie,defaults} from 'react-chartjs-2';
 //defaults.global.legend.position ='bottom';
 function Piechart() {
    
+   const id=JSON.parse(localStorage.getItem('dataid'))
+   const data=JSON.parse(localStorage.getItem('data'))
     return (
         <div>
            <Pie
-            data={{labels:['red','yellow','black','purple'],
+            data={{labels:id,
            datasets:[
                {
                    label:'£ of votes',
-                   data:[67,89,12,34],
+                   data:data,
                    backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',

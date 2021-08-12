@@ -2,7 +2,7 @@
   "name": "boxang",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Coderdivine.github.io/divere",
+  "homepage": "https://Coderdivine.github.io/boxang",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
