@@ -1,21 +1,12 @@
-import React,{useState} from 'react'
-
-function Topthree(props) {
-    const listed=props.list;
-     const arr=[{name:"chimdindu",account:"4567890",password:"12345",rf:"hEfhFVVFjVJjHVKhfBrhjJKfK"},
-     {name:"chimdindu",account:"4567890",password:"12345",rf:"hEfhFVVFjVJjHVKhfBrhjJKfK"},
-     {name:"chimdindu",account:"4567890",password:"12345",rf:"hEfhFVVFjVJjHVKhfBrhjJKfK"},
-     {name:"chimdindu",account:"4567890",password:"12345",rf:"hEfhFVVFjVJjHVKhfBrhjJKfK"},
-     {name:"chimdindu",account:"4567890",password:"12345",rf:"hEfhFVVFjVJjHVKhfBrhjJKfK"},
-     {name:"chimdindu",account:"4567890",password:"12345",rf:"hEfhFVVFjVJjHVKhfBrhjJKfK"},
-     {name:"chimdindu",account:"4567890",password:"12345",rf:"hEfhFVVFjVJjHVKhfBrhjJKfK"},
-     {name:"chimdindu",account:"4567890",password:"12345",rf:"hEfhFVVFjVJjHVKhfBrhjJKfK"},
-     {name:"chimdindu",account:"4567890",password:"12345",rf:"hEfhFVVFjVJjHVKhfBrhjJKfK"},
-    
-    ]
+import React,{useContext, useState} from 'react'
+import {create} from "./App";
+import Dashboard from './Dashboard';
+function Topthree() {
+   
+    const{setNextpage,datacreated}=useContext(create);
     const handleback=(e)=>{
-      e.preventDefault();
-      window.location="./Dashboard";
+      setNextpage(<div><Dashboard/></div>)
+  
   }
     return (
          <div><div class="col-35" ><div class="left-1"><span onClick={(e)=>handleback(e)}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
@@ -28,10 +19,10 @@ function Topthree(props) {
           <br/>
           <br/>
           <div>
-              {listed.map(i=>
+              {datacreated.map(i=>
                 <div class="listed-one">
                     <ul>
-                        <li>{i.rf}</li><small><i>456</i></small>
+                        <li>{i.rfcode}</li><small><i>456</i></small>
                     </ul>
                 </div>)}
           </div>

@@ -1,17 +1,13 @@
-import React,{useState,useContext,useEffect,createContext} from 'react';
+import React,{useState,useContext,useEffect} from 'react';
 import Adspage from './Adspage';
 import Dashbaord from './Dashboard';
-import Filterboxbang from './Filterboxbang';
-import Searchname from './Searchname';
-import Top from './Top';
-import Topthree  from './Topthree';
 import Admin  from './Admin';
 import Home from './Home';
-import axios from 'axios';
 import {Axios} from "./Contact";
-import { getDefaultNormalizer } from '@testing-library/react';
- export const create=createContext();
+import {create} from "./App";
+ 
 function Homepage() {
+    const{datacreated,setDatacreated,one,setOne}=useContext(create);
     const[name,setName]=useState("");
     const[pass,setPass]=useState("")
     const[load,setLoad]=useState(true);
@@ -20,8 +16,7 @@ function Homepage() {
    const[account,setAccount]=useState("")
    const[password,setPassword]=useState("");
    const[rfcode,setRfcode]=useState("");
-   const[datacreated,setDatacreated]=useState([])
-   const[one,setOne]=useState(<div>...</div>)
+  
    const [fa,setFa]=useState(false);
    const[counter,setCounter]=useState(0);
    const[counterlive,setCounterlive]=useState(true);
@@ -51,18 +46,19 @@ function Homepage() {
    const handleDashboard=(e)=>{
        setLoad(false);
        
-       setOne(<div class="black"><Dashbaord list={datacreated}/></div>);
+       setOne(<div class="black"><Dashbaord /></div>);
    }
    const handleDash=(e)=>{
-       if(name==="chimdindu" && pass==="chimdinduasdasd"){
+       if(name==="ikboxang123" && pass==="ikboxangasdasd"){
     setLoad(false);
-    setOne(<div class="black"><Admin list={datacreated}/></div>);}
+    setOne(<div class="black"><Admin /></div>);}
 }
  const  handleJoin=async(e)=>{
      e.preventDefault();
      localStorage.setItem('username',username)
      localStorage.setItem('account',account)
 const res={
+    id:77,
     name:username,
     accno:account,
     password:password,

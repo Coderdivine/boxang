@@ -3,21 +3,18 @@ import Filterboxbang from './Filterboxbang';
 import Searchname from './Searchname';
 import Topthree from './Topthree';
 import Adspage from "./Adspage";
-import {create} from "./Homepage";
-function Dashboard(props) {
-    const listed=props.list;
+import {create} from "./App";
+function Dashboard() {
+   const{setNextpage,nextpage}=useContext(create);
     const[one,setOne]=useState(false);
-    
-    const[person,setPerson]=useState(0);
-    const[income,setIncome]=useState(0);
-    const id =useRef(`${Date.now}`);
-    const[nextpage,setNextpage]=useState(<div class="balck-one">...</div>);
+   
+
        const rfcode=`${localStorage.getItem("username")}/HJVBKydiytdB/${localStorage.getItem("account")}/BoXaNg`;         
     const handlesearch=(e)=>{
         e.preventDefault();
         setOne(true);
         setNextpage(<div class="black-one">
-          <Searchname list={listed}/>
+          <Searchname />
         </div>)
 
     }
@@ -25,14 +22,14 @@ function Dashboard(props) {
         e.preventDefault();
         setOne(true);
         setNextpage(<div class="black-one">
-          <Filterboxbang list={listed}/>
+          <Filterboxbang />
         </div>)
     }
     const handletop=(e)=>{
         e.preventDefault();
         setOne(true);
         setNextpage(<div class="black-one">
-          <Topthree list={listed} />
+          <Topthree  />
         </div>)
     }
     const handlewithdraw=(e)=>{
@@ -66,16 +63,11 @@ function Dashboard(props) {
         }
     }, 15000);
     },[ads])
-    const handleback=(e)=>{
-        e.preventDefault();
-        window.location="./Dashboard";
-    }
+    
     
     return (
         <div>
-           {!one?<div><div class="left-1"><span onClick={(e)=>handleback(e)}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
-         <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
-       </svg></span></div>
+           {!one?<div>
                <div class="col-4" >
   <div class="innercontainer" >
       

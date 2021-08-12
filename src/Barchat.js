@@ -1,6 +1,6 @@
 import React from 'react'
-import {Line,defaults} from 'react-chartjs-2';
-//defaults.global.legend.position ='bottom'
+import {Line} from 'react-chartjs-2';
+
 
 function Barchat() {
    const income=JSON.parse(localStorage.getItem('dataincome'))

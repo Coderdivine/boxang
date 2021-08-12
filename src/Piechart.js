@@ -1,6 +1,5 @@
 import React from 'react'
-import {Pie,defaults} from 'react-chartjs-2';
-//defaults.global.legend.position ='bottom';
+import {Pie} from 'react-chartjs-2';
 function Piechart() {
    
    const id=JSON.parse(localStorage.getItem('dataid'))
