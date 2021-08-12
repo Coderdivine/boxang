@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/boxang/static/css/main.cf40ef29.chunk.css",
-    "main.js": "/boxang/static/js/main.177fed9a.chunk.js",
-    "main.js.map": "/boxang/static/js/main.177fed9a.chunk.js.map",
-    "runtime-main.js": "/boxang/static/js/runtime-main.5be56cde.js",
-    "runtime-main.js.map": "/boxang/static/js/runtime-main.5be56cde.js.map",
-    "static/js/2.c1575b25.chunk.js": "/boxang/static/js/2.c1575b25.chunk.js",
-    "static/js/2.c1575b25.chunk.js.map": "/boxang/static/js/2.c1575b25.chunk.js.map",
-    "static/js/3.0ec4787e.chunk.js": "/boxang/static/js/3.0ec4787e.chunk.js",
-    "static/js/3.0ec4787e.chunk.js.map": "/boxang/static/js/3.0ec4787e.chunk.js.map",
+    "main.js": "/boxang/static/js/main.90ba0efd.chunk.js",
+    "main.js.map": "/boxang/static/js/main.90ba0efd.chunk.js.map",
+    "runtime-main.js": "/boxang/static/js/runtime-main.6449adb0.js",
+    "runtime-main.js.map": "/boxang/static/js/runtime-main.6449adb0.js.map",
+    "static/js/2.e52e2a3f.chunk.js": "/boxang/static/js/2.e52e2a3f.chunk.js",
+    "static/js/2.e52e2a3f.chunk.js.map": "/boxang/static/js/2.e52e2a3f.chunk.js.map",
+    "static/js/3.7551c924.chunk.js": "/boxang/static/js/3.7551c924.chunk.js",
+    "static/js/3.7551c924.chunk.js.map": "/boxang/static/js/3.7551c924.chunk.js.map",
     "index.html": "/boxang/index.html",
     "static/css/main.cf40ef29.chunk.css.map": "/boxang/static/css/main.cf40ef29.chunk.css.map",
-    "static/js/2.c1575b25.chunk.js.LICENSE.txt": "/boxang/static/js/2.c1575b25.chunk.js.LICENSE.txt"
+    "static/js/2.e52e2a3f.chunk.js.LICENSE.txt": "/boxang/static/js/2.e52e2a3f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.5be56cde.js",
-    "static/js/2.c1575b25.chunk.js",
+    "static/js/runtime-main.6449adb0.js",
+    "static/js/2.e52e2a3f.chunk.js",
     "static/css/main.cf40ef29.chunk.css",
-    "static/js/main.177fed9a.chunk.js"
+    "static/js/main.90ba0efd.chunk.js"
   ]
 }
