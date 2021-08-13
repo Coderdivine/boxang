@@ -58,7 +58,7 @@ function Homepage() {
      localStorage.setItem('username',username)
      localStorage.setItem('account',account)
 const res={
-    id:77,
+    
     name:username,
     accno:account,
     password:password,
