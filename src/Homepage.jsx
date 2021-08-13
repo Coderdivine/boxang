@@ -64,7 +64,7 @@ const res={
     password:password,
     rfcode:rfcode
 }
-const resq=await Axios.post("/api/create",res).then((response)=>{
+const resq=await Axios.post("/create",res).then((response)=>{
     console.log("success")
 }).then(()=>{alert("success")});
 if(resq)getdata()
