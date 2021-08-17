@@ -37,7 +37,7 @@ function Filterboxbang() {
    }).map(i=>
                 <div class="listed-one">
                     <ul>
-                        <li>{i.rfcode}</li><small><i>456</i></small>
+                        <li>{i.rfcode}</li><small><i>{datacreated.filter(x=>x.rfcode===i.rfcode).length}</i></small>
                     </ul>
                 </div>)}
           </div>

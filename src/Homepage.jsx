@@ -77,7 +77,7 @@ const getdata=async()=>{
         console.log("success")
     })
     if(resq && resq.data)
-    setDatacreated(resq.data)
+    setDatacreated([...datacreated,resq.data])
         
 }
 useEffect(() => {

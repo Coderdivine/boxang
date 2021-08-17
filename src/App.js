@@ -11,7 +11,27 @@ function App() {
   const[incomedata,setIncomedata]=useState([5,78,3,45,65,43,34]);
   const[iddata,setIddata]=useState(['1','2','3','4','5','6','7']);
   const[nextpage,setNextpage]=useState(<div class="balck-one">...</div>);
-
+  useEffect(() => {
+    const localcounter=    localStorage.setItem('data',JSON.stringify(persondata));
+        if(localcounter){
+            setPersondata(localcounter);
+        }
+        
+       }, [persondata]); 
+       useEffect(() => {
+     const localcounter=   localStorage.setItem('dataincome',JSON.stringify(incomedata));
+     if(localcounter){
+        setIncomedata(localcounter);
+    }
+    
+    }, [incomedata]);
+         useEffect(() => {
+        const localcounter= localStorage.setItem('dataid',JSON.stringify(iddata));
+            if(localcounter){
+                setIddata(localcounter);
+            }
+            
+         }, [iddata]) 
   useEffect(() => {
            
             
@@ -24,43 +44,7 @@ function App() {
             clearInterval(timeinterval)
          }
      }, [person,income]);
-     const[datacreated,setDatacreated]=useState([{
-        id:1,
-        name:"username",
-        accno:"account",
-        password:"password",
-        rfcode:"rfcode"
-    },{
-        id:2,
-        name:"username",
-        accno:"account",
-        password:"password",
-        rfcode:"rfcode"
-    },{
-        id:3,
-        name:"username",
-        accno:"account",
-        password:"password",
-        rfcode:"rfcode"
-    },{
-        id:1,
-        name:"username",
-        accno:"account",
-        password:"password",
-        rfcode:"rfcode"
-    },{
-        id:2,
-        name:"username",
-        accno:"account",
-        password:"password",
-        rfcode:"rfcode"
-    },{
-        id:3,
-        name:"username",
-        accno:"account",
-        password:"password",
-        rfcode:"rfcode"
-    }]) 
+     const[datacreated,setDatacreated]=useState([]) 
      useEffect(() => {
         
       if(counter==30){
@@ -114,27 +98,7 @@ function App() {
     localStorage.setItem('dataid',JSON.stringify(iddata));
 
 } 
-useEffect(() => {
-  const localcounter=    localStorage.setItem('data',JSON.stringify(persondata));
-      if(localcounter){
-          setPersondata(localcounter);
-      }
-      
-     }, [persondata]); 
-     useEffect(() => {
-   const localcounter=   localStorage.setItem('dataincome',JSON.stringify(incomedata));
-   if(localcounter){
-      setIncomedata(localcounter);
-  }
-  
-  }, [incomedata]);
-       useEffect(() => {
-      const localcounter= localStorage.setItem('dataid',JSON.stringify(iddata));
-          if(localcounter){
-              setIddata(localcounter);
-          }
-          
-       }, [iddata])
+
        const[one,setOne]=useState(<div>...</div>);
   return (
     <div>
