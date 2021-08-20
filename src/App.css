@@ -883,14 +883,18 @@ padding:20px 0;
 font-size:26px;
 line-height:32px;
 }
-
+.a small{
+  color: blue;
+  text-decoration-line: underline;
+  cursor: pointer;
+}
 .cart-info p{
  display:none;
 }
 .load{
   width: 100%;
   height:500%; margin:0;
-  background-color: brown;
+  background-color: black;
   padding:100% 0;
   overflow: hidden;
   position:relative;

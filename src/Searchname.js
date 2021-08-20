@@ -13,7 +13,9 @@ function Searchname() {
       const handleback=(e)=>{
               setNextpage(<div><Dashboard/></div>)
              }
-     
+             const doshow=()=>{
+                localStorage.setItem("dey","dont show");
+              }
      
 return (
         <div>
@@ -23,6 +25,14 @@ return (
       
             <div class="graph">
       <Piechat />
+      <hr/>
+      {
+!localStorage.getItem("dey")?<div>
+ <small>This Pie graph helps users estimate the number of people using the app at that momnet in boxang.
+ </small>
+              <br/><a class="a" onClick={()=>doshow()}><small>Don't show me this again</small></a> </div>:<div><small>...</small></div>
+  
+  }
        </div>
             <div class="search"><input value={search} id="text" type="text" placeholder="Please enter your username..." onChange={(e)=>setSearch(e.target.value)}/><h1><span>Search</span></h1>
           </div>
@@ -41,4 +51,4 @@ return (
     )
 }
 
-export default Searchname
+export default Searchname;

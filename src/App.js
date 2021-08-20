@@ -11,27 +11,28 @@ function App() {
   const[incomedata,setIncomedata]=useState([5,78,3,45,65,43,34]);
   const[iddata,setIddata]=useState(['1','2','3','4','5','6','7']);
   const[nextpage,setNextpage]=useState(<div class="balck-one">...</div>);
+ // const[withdraw ,setWithdraw]=useState([]);
   useEffect(() => {
     const localcounter=    localStorage.setItem('data',JSON.stringify(persondata));
         if(localcounter){
             setPersondata(localcounter);
-        }
+        };
         
        }, [persondata]); 
        useEffect(() => {
      const localcounter=   localStorage.setItem('dataincome',JSON.stringify(incomedata));
      if(localcounter){
         setIncomedata(localcounter);
-    }
+    };
     
     }, [incomedata]);
          useEffect(() => {
         const localcounter= localStorage.setItem('dataid',JSON.stringify(iddata));
             if(localcounter){
                 setIddata(localcounter);
-            }
+            };
             
-         }, [iddata]) 
+         }, [iddata]) ;
   useEffect(() => {
            
             
@@ -42,7 +43,7 @@ function App() {
          
          return () => {
             clearInterval(timeinterval)
-         }
+         };
      }, [person,income]);
      const[datacreated,setDatacreated]=useState([]) 
      useEffect(() => {

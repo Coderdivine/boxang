@@ -35,7 +35,7 @@ function Dashboard() {
     const handlewithdraw=(e)=>{
         e.preventDefault();
   if(localStorage.getItem('username')&& localStorage.getItem('rfcode')){  
-        alert(`${localStorage.getItem("rfcode")} `)
+        alert(`Sorry ${localStorage.getItem("rfcode")}, this request is not available at the moment `)
     setAds(true);
   }else{
     alert(`PLease generate your Refferal code first `)
@@ -76,11 +76,11 @@ function Dashboard() {
       <div class="withdraw"><ul>
           <li><span onClick={(e)=>handlewithdraw(e)}>Withdraw</span></li><hr/>
           <li><span onClick={(e)=>handlerfcode(e)}>Generate Refferal Code</span></li>          </ul></div>
-         <div>
+         <div><hr/>
            {
               ! localStorage.getItem("rfcode")?
                <div><i>No Refferal Code Yet...</i></div>:<div>{ads?<div><Adspage/></div>:<div><small><i>Your Refferal Code is</i> : {localStorage.getItem("rfcode")}</small></div>}</div>
-           }
+           }<hr/>
          </div>
           <div  class="form-container-one">
              <button class="btn" onClick={(e)=>handlesearch(e)}>Search for name on Boxang</button><br/>

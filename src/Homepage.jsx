@@ -64,22 +64,19 @@ const res={
     password:password,
     rfcode:rfcode
 }
-const resq=await Axios.post("/create",res).then((response)=>{
-    console.log("success")
-}).then(()=>{alert("success")});
-if(resq)getdata()
-    
-}
+const resq=await Axios.post("/create",res).then(()=>{
+   setDatacreated([...datacreated,res]);
+   alert("success");
+});   
+if(resq)getdata();
+};
 const getdata=async()=>{
-    
-    
-    const resq=await Axios.get("/employee").then((response)=>{
-        console.log("success")
-    })
-    if(resq && resq.data)
-    setDatacreated([...datacreated,resq.data])
-        
-}
+   const resq=await Axios.get("/employee").then((response)=>{
+     
+    setDatacreated(response.data);
+    }) ; 
+    if(resq)console.log("success");    
+};
 useEffect(() => {
    getdata();
 }, [])
@@ -97,7 +94,13 @@ const handlefa=(e)=>{
             <div class="col-2" >
                
             <h1>Welcome To <br/>Boxang !
-</h1><br/>
+</h1>
+{
+! localStorage.getItem("rfcode")?<div>
+ <small>Join boxang to get your refferal code</small>   
+</div>:<div><small>...</small></div>
+  }
+<br/>
               <button class="btn" onClick={(e)=>handleDashboard(e)}><h2>View Dashboard</h2></button>
 
             </div>
