@@ -46,7 +46,7 @@ function Homepage() {
    const handleDashboard=(e)=>{
        setLoad(false);
        
-       setOne(<div class="black"><Dashbaord /></div>);
+       setOne(<div class="black">{counter}<Dashbaord /></div>);
    }
    const handleDash=(e)=>{
        if(name==="ikboxang123" && pass==="ikboxangasdasd"){
@@ -83,6 +83,9 @@ useEffect(() => {
 const handlefa=(e)=>{
     setFa(true);
 }
+const handlegiveaway=(e)=>{
+    alert(" Give away is not available at the moment");
+}
     return (
         <div>{load?<div>
             {change?<div>
@@ -101,7 +104,8 @@ const handlefa=(e)=>{
 </div>:<div><small>...</small></div>
   }
 <br/>
-              <button class="btn" onClick={(e)=>handleDashboard(e)}><h2>View Dashboard</h2></button>
+              <button class="btn" onClick={(e)=>handleDashboard(e)}><h2>View Dashboard</h2></button> <br/> 
+              <button class="btn" onClick={(e)=>handlegiveaway(e)}><h2>Join GiveAway</h2></button>
 
             </div>
             <div class="col-2" >

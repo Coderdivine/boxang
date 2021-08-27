@@ -19,10 +19,11 @@ function Topthree() {
           <br/>
           <br/>
           <div>
-              {datacreated.map(i=>
+              {datacreated.filter(x=> x >= 30).map(i=>
                 <div class="listed-one">
                     <ul>
-                        <li>{i.rfcode}</li><small><i>456</i></small>
+                        <li>{i.rfcode}</li><small><i>{i.rfcode<=15?<div className="listed-one"><small>{datacreated.filter(x=>x.rfcode===i.rfcode).length}</small></div>:<div className="listedone"><small>{datacreated.filter(x=>x.rfcode===i.rfcode).length}</small></div> }
+                        </i></small>
                     </ul>
                 </div>)}
           </div>

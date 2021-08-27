@@ -54,4 +54,4 @@ function Filterboxbang() {
     )
 }
 
-export default Filterboxbang
+export default Filterboxbang;

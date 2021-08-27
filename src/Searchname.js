@@ -39,7 +39,9 @@ return (
           <br/>
           <br/>     
           <div>
-              {datacreated.map(i=>
+          {datacreated.filter((lists)=>{
+     if(search==""){return lists}else if(lists.name.toLowerCase().includes(search.toLowerCase())){return lists}
+   }).map(i=>
                 <div class="listed">
                     <ul>
                         <li>{i.name}</li><br/>

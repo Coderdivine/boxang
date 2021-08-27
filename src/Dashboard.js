@@ -38,7 +38,7 @@ function Dashboard() {
         alert(`Sorry ${localStorage.getItem("rfcode")}, this request is not available at the moment `)
     setAds(true);
   }else{
-    alert(`PLease generate your Refferal code first `)
+    alert(`Please generate your Refferal code first `)
     setAds(true); 
   }
         
