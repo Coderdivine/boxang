@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/boxang/static/css/main.cd21356b.chunk.css",
-    "main.js": "/boxang/static/js/main.da781aad.chunk.js",
-    "main.js.map": "/boxang/static/js/main.da781aad.chunk.js.map",
+    "main.css": "/boxang/static/css/main.a8ce3433.chunk.css",
+    "main.js": "/boxang/static/js/main.bf22ced8.chunk.js",
+    "main.js.map": "/boxang/static/js/main.bf22ced8.chunk.js.map",
     "runtime-main.js": "/boxang/static/js/runtime-main.c3e9a404.js",
     "runtime-main.js.map": "/boxang/static/js/runtime-main.c3e9a404.js.map",
     "static/js/2.e45ee8f3.chunk.js": "/boxang/static/js/2.e45ee8f3.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.2cd371bb.chunk.js": "/boxang/static/js/3.2cd371bb.chunk.js",
     "static/js/3.2cd371bb.chunk.js.map": "/boxang/static/js/3.2cd371bb.chunk.js.map",
     "index.html": "/boxang/index.html",
-    "static/css/main.cd21356b.chunk.css.map": "/boxang/static/css/main.cd21356b.chunk.css.map",
+    "static/css/main.a8ce3433.chunk.css.map": "/boxang/static/css/main.a8ce3433.chunk.css.map",
     "static/js/2.e45ee8f3.chunk.js.LICENSE.txt": "/boxang/static/js/2.e45ee8f3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c3e9a404.js",
     "static/js/2.e45ee8f3.chunk.js",
-    "static/css/main.cd21356b.chunk.css",
-    "static/js/main.da781aad.chunk.js"
+    "static/css/main.a8ce3433.chunk.css",
+    "static/js/main.bf22ced8.chunk.js"
   ]
 }
