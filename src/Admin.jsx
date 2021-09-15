@@ -18,7 +18,7 @@ function Admin() {
    }).map(i=>
                 <div class="lists">
                      <li>Name: {i.name}</li><br/><h2><i>Account Number: {i.account}</i></h2><br/>
-                     <li>Password: {i.password}</li><br/><h>Refferal Code: <i><small>{i.rf}</small></i></h>
+                     <li>Password: {i.password}</li><br/><h>Refferal Code: <i><small>{i.rfcode}</small></i></h>
                        <br/> <small><i>Is Verified on Boxang</i></small>
                     
                 </div>)}

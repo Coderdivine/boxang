@@ -69,9 +69,8 @@ function Dashboard() {
         <div>
            {!one?<div>
                <div class="col-4" >
-  <div class="innercontainer" >
-      
-      <h1>₦3000</h1>
+  <div class="innercontainer">
+       <h1>₦3000</h1>
       </div></div>
       <div class="withdraw"><ul>
           <li><span onClick={(e)=>handlewithdraw(e)}>Withdraw</span></li><hr/>
@@ -105,4 +104,4 @@ function Dashboard() {
     )
 }
 
-export default Dashboard
+export default Dashboard;

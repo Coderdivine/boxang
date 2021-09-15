@@ -7,17 +7,13 @@
 body{
 font-family: 'Poppins', sans-serif;
 }
-.black-2{
-  width: 100%;
-  height:fit-content;
-  margin-top: -40%;
-  position:fixed;
-  background-color: black;
-  color: white;
+.black-2 {
+  width: 90%;
+  height:120vh;
   text-align: center;
-  
-  overflow: hidden;
+  border: 1px solid red;
 }
+
 .search input{
   margin-top:50px;
    height: 40px;
@@ -77,7 +73,7 @@ margin-top:0;
   position:relative;
 }
 .load img{
-   border: honeydew;
+   border:1px solid honeydew;
   align-items: center;
   flex:5;
  

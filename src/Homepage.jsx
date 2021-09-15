@@ -20,33 +20,34 @@ function Homepage() {
    const [fa,setFa]=useState(false);
    const[counter,setCounter]=useState(0);
    const[counterlive,setCounterlive]=useState(true);
-
    useEffect(() => {
-       if(counterlive){
-  const timeinterval=setTimeout(() => {
-      setCounter(counter+1);
-  },1000);
-       
-       return () => {
-          clearInterval(timeinterval)
-       }}
-   }, [counter,counterlive])
+    if(counterlive){
+const timeinterval=setTimeout(() => {
+   setCounter(counter+1);
+},1000);
+    
+    return () => {
+       clearInterval(timeinterval)
+    }}
+}, [counter,counterlive])
+   useEffect(() => {
+    const localcounter=localStorage.setItem('counter',counter);
+    if(localcounter){
+        setCounter(localcounter);
+    }
+    
+}, [counter])
+
    useEffect(() => {
        setInterval(() => {
           setChange(false); 
        }, 3000);
    }, [])
-   useEffect(() => {
-       const localcounter=localStorage.setItem('counter',counter);
-       if(localcounter){
-           setCounter(localcounter);
-       }
-       
-   }, [counter])
+ 
    const handleDashboard=(e)=>{
        setLoad(false);
        
-       setOne(<div class="black">{counter}<Dashbaord /></div>);
+       setOne(<div class="black"><Dashbaord /></div>);
    }
    const handleDash=(e)=>{
        if(name==="ikboxang123" && pass==="ikboxangasdasd"){
@@ -83,10 +84,7 @@ useEffect(() => {
 const handlefa=(e)=>{
     setFa(true);
 }
-const handlegiveaway=(e)=>{
-    alert(" Give away is not available at the moment");
-}
-    return (
+ return (
         <div>{load?<div>
             {change?<div>
             <Home/>
@@ -104,8 +102,8 @@ const handlegiveaway=(e)=>{
 </div>:<div><small>...</small></div>
   }
 <br/>
-              <button class="btn" onClick={(e)=>handleDashboard(e)}><h2>View Dashboard</h2></button> <br/> 
-              <button class="btn" onClick={(e)=>handlegiveaway(e)}><h2>Join GiveAway</h2></button>
+              <button class="btn" onClick={(e)=>handleDashboard(e)}><h2>View Dashboard</h2></button>
+              
 
             </div>
             <div class="col-2" >
