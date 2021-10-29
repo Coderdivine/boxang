@@ -32,6 +32,10 @@ function Dashboard() {
           <Topthree  />
         </div>)
     }
+    const stt=localStorage.getItem('rfcode')
+    const copy=()=>{
+        navigator.clipboard.copyText(stt);
+    }
     const handlewithdraw=(e)=>{
         e.preventDefault();
   if(localStorage.getItem('username')&& localStorage.getItem('rfcode')){  
@@ -78,7 +82,7 @@ function Dashboard() {
          <div><hr/>
            {
               ! localStorage.getItem("rfcode")?
-               <div><i>No Refferal Code Yet...</i></div>:<div>{ads?<div><Adspage/></div>:<div><small><i>Your Refferal Code is</i> : {localStorage.getItem("rfcode")}</small></div>}</div>
+               <div><i>No Refferal Code Yet...</i></div>:<div>{ads?<div><Adspage/></div>:<div><small><i>Your Refferal Code is</i> : {localStorage.getItem("rfcode")}</small><button class="btn" onClick={copy}>Copy</button></div>}</div>
            }<hr/>
          </div>
           <div  class="form-container-one">

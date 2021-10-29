@@ -65,12 +65,19 @@ const res={
     password:password,
     rfcode:rfcode
 }
+if(username && password ){
 const resq=await Axios.post("/create",res).then(()=>{
    setDatacreated([...datacreated,res]);
    alert("success");
-});   
-if(resq)getdata();
-};
+});
+if(resq)getdata();}else{alert("Username and Password is must !")}
+ 
+  
+
+}
+
+
+
 const getdata=async()=>{
    const resq=await Axios.get("/employee").then((response)=>{
      
@@ -81,7 +88,9 @@ const getdata=async()=>{
 useEffect(() => {
    getdata();
 }, [])
+
 const handlefa=(e)=>{
+   
     setFa(true);
 }
  return (
@@ -93,16 +102,25 @@ const handlefa=(e)=>{
                 <div class="inner-container">
             <div class="row" >
             <div class="col-2" >
-               
-            <h1>Welcome To <br/>Boxang !
-</h1>
-{
+            <header class="headerr">
+        <div class="content">
+            <h1 class="heading">
+                <span class="small">welcome to</span>
+                
+                <span class="no-fill">BOXANG</span>
+            </h1>
+            {
 ! localStorage.getItem("rfcode")?<div>
- <small>Join boxang to get your refferal code</small>   
+ <small className="wy" >Join boxang to get your refferal code</small>   
 </div>:<div><small>...</small></div>
   }
 <br/>
-              <button class="btn" onClick={(e)=>handleDashboard(e)}><h2>View Dashboard</h2></button>
+            <button class="btn" onClick={(e)=>handleDashboard(e)}><h2>View Dashboard</h2></button>
+
+        </div>
+    </header> 
+   
+<br/>
               
 
             </div>
@@ -166,8 +184,8 @@ const handlefa=(e)=>{
         <li>Search for name on boxang :<br/>
         search for name on boxang allows you to know if your verified on boxang or not
         and also shows you the percentage of people that visit the site every day.</li>
-        <li>Filter Boxang:<br/> This page allows you check how many times your refferal code has been used on boxang. This page also comes with a graph that shows the percentage of people against their income.At the end of everymonth, 
-        60% is shared to the to 35 on boxang.</li>
+        <li>Filter Boxang:<br/> This page allows you check how many times your refferal code has been used on boxang. This page also comes with a graph that shows the percentage of people against their income.At the end of every month, 
+        40% is shared to the to 35 on boxang.</li>
         <li>Top 35 on Boxang:<br/>
         This page shows or countdown the days remaining and also give feedback images.
         It also shows top 35 Refferal code on Boxang.</li>
